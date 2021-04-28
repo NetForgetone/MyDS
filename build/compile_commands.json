@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/datastruct_Algorithm/Learn-Algorithms-master/build",
+  "command": "/usr/bin/gcc-7  -I/home/datastruct_Algorithm/Learn-Algorithms-master/include  -g   -o CMakeFiles/LIST.dir/src/Vecter/sequence_list.c.o   -c /home/datastruct_Algorithm/Learn-Algorithms-master/src/Vecter/sequence_list.c",
+  "file": "/home/datastruct_Algorithm/Learn-Algorithms-master/src/Vecter/sequence_list.c"
+},
+{
+  "directory": "/home/datastruct_Algorithm/Learn-Algorithms-master/build/src/Vecter",
+  "command": "/usr/bin/gcc-7 -Dvecter_EXPORTS -I/home/datastruct_Algorithm/Learn-Algorithms-master/include  -g -fPIC   -o CMakeFiles/vecter.dir/sequence_list.c.o   -c /home/datastruct_Algorithm/Learn-Algorithms-master/src/Vecter/sequence_list.c",
+  "file": "/home/datastruct_Algorithm/Learn-Algorithms-master/src/Vecter/sequence_list.c"
+}
+]

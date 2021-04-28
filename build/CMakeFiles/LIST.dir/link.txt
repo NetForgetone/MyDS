@@ -1,0 +1,1 @@
+/usr/bin/gcc-7 -g  -rdynamic CMakeFiles/LIST.dir/src/Vecter/sequence_list.c.o  -o ../Bin/LIST  -L/home/datastruct_Algorithm/Learn-Algorithms-master/lib 

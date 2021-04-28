@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC   -shared -Wl,-soname,libvector.so -o ../../lib/libvector.so CMakeFiles/vector.dir/sequence_list.c.o  -L/home/datastruct_Algorithm/Learn-Algorithms-master/lib 
