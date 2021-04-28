@@ -6,5 +6,5 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/datastruct_Algorithm/Learn-Algorithms-master/include 
+C_INCLUDES = -I/home/object/MyDS/include 
 

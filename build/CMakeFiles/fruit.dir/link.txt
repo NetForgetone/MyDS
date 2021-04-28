@@ -1,1 +1,0 @@
-/usr/bin/gcc-7 -g  -rdynamic CMakeFiles/fruit.dir/src/Vecter/sequence_list.c.o  -o ../bin/fruit 

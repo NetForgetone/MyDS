@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/datastruct_Algorithm/Learn-Algorithms-master/src/Vecter/sequence_list.c" "/home/datastruct_Algorithm/Learn-Algorithms-master/build/src/Vecter/CMakeFiles/vecter.dir/sequence_list.c.o"
+  "/home/object/MyDS/src/Vecter/sequence_list.c" "/home/object/MyDS/build/src/Vecter/CMakeFiles/vecter.dir/sequence_list.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

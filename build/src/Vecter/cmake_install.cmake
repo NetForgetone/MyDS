@@ -1,4 +1,4 @@
-# Install script for directory: /home/datastruct_Algorithm/Learn-Algorithms-master/src/Vecter
+# Install script for directory: /home/object/MyDS/src/Vecter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

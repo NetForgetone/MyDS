@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/datastruct_Algorithm/Learn-Algorithms-master
+CMAKE_SOURCE_DIR = /home/object/MyDS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/datastruct_Algorithm/Learn-Algorithms-master/build
+CMAKE_BINARY_DIR = /home/object/MyDS/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/datastruct_Algorithm/Learn-Algorithms-master/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/datastruct_Algorithm/Learn-Algorithms-master/build/CMakeFiles /home/datastruct_Algorithm/Learn-Algorithms-master/build/src/CMakeFiles/progress.marks
-	cd /home/datastruct_Algorithm/Learn-Algorithms-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/datastruct_Algorithm/Learn-Algorithms-master/build/CMakeFiles 0
+	cd /home/object/MyDS/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/object/MyDS/build/CMakeFiles /home/object/MyDS/build/src/CMakeFiles/progress.marks
+	cd /home/object/MyDS/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/object/MyDS/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/datastruct_Algorithm/Learn-Algorithms-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/object/MyDS/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/datastruct_Algorithm/Learn-Algorithms-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/object/MyDS/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/datastruct_Algorithm/Learn-Algorithms-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/object/MyDS/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/datastruct_Algorithm/Learn-Algorithms-master/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/object/MyDS/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -129,6 +129,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/datastruct_Algorithm/Learn-Algorithms-master/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/object/MyDS/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
