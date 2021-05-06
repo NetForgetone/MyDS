@@ -19,7 +19,7 @@ struct BSTreeNode
     int data;
     struct BSTreeNode* lchild;
     struct BSTreeNode* rchild;
-    //struct BSTreeNode *parent;
+    struct BSTreeNode *parent;
 };
 
 /**
@@ -41,7 +41,7 @@ void InTraverseBSTree(struct BSTreeNode* pBST);
  * 
  * @param pBST 
  */
-void PostTraverseBSTree(struct BSTreeNode * pBST);
+void PostTraverseBSTree(struct BSTreeNode* pBST);
 
 /**
  * @brief 搜索key 数据是否存在，存在则返回该存储树结点
@@ -50,7 +50,7 @@ void PostTraverseBSTree(struct BSTreeNode * pBST);
  * @param key 
  * @return struct BSTreeNode* 
  */
-struct BSTreeNode* SearchBSTree(struct BSTreeNode* pBST,const int key);
+struct BSTreeNode* SearchBSTree(struct BSTreeNode* pBST, int key);
 
 
 /**
@@ -65,7 +65,7 @@ struct BSTreeNode* SearchBSTree(struct BSTreeNode* pBST,const int key);
  * @param pMinData
  * @return struct BSTreeNode* 
  */
-struct BSTreeNode *SearchMinBSTree(struct BSTreeNode* pBST,const int* pMinData);
+struct BSTreeNode* SearchMinBSTree(struct BSTreeNode* pBST, int* pMinData);
 
 /**
  * @brief 查收二叉树中最大的值
@@ -74,7 +74,7 @@ struct BSTreeNode *SearchMinBSTree(struct BSTreeNode* pBST,const int* pMinData);
  * @param pMaxData 
  * @return struct BSTreeNode* 
  */
-struct BSTreeNode *SearchMaxBSTree(struct BSTreeNode* pBST,const int* pMaxData);
+struct BSTreeNode *SearchMaxBSTree(struct BSTreeNode* pBST, int* pMaxData);
 
 /**
  * @brief 向二叉树中插入一个元素
@@ -84,7 +84,7 @@ struct BSTreeNode *SearchMaxBSTree(struct BSTreeNode* pBST,const int* pMaxData);
  * @return true 
  * @return false 
  */
-bool InsertBSTree(struct BSTreeNode *pBST,const int InsertVal);
+bool InsertBSTree(struct BSTreeNode *pBST, int InsertVal);
 
 /**
  * @brief 删除二叉树中的元素
@@ -94,7 +94,7 @@ bool InsertBSTree(struct BSTreeNode *pBST,const int InsertVal);
  * @return true 
  * @return false 
  */
-bool DeleteBSTree(struct BSTreeNode *pBST, const int DeleteVal);
+bool DeleteBSTree(struct BSTreeNode* pBST, int DeleteVal);
 
 /**
  * @brief  创建一颗二叉搜索树
