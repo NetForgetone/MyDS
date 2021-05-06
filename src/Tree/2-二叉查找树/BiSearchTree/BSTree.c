@@ -164,11 +164,12 @@ bool InsertBSTree(struct BSTreeNode *pBST, int InsertVal)
     if (pNewNode == NULL)
     {
         printf("mallic BSTreeNode faild!\r\n");
-        exit(-1);
+        return(-1);
     }
     pNewNode->data = InsertVal;
     pNewNode->lchild=pNewNode->rchild = NULL;
     
+    /*优先处理常见情况即pBST不为空有结点 */
     while (NULL != pBST)
     {
         pTemp = pBST;
@@ -196,18 +197,21 @@ bool InsertBSTree(struct BSTreeNode *pBST, int InsertVal)
     {
         pTemp->rchild = pNewNode;
     }
+    return true;
 }
-
 
 /**
  * @brief 插入元素到二叉树
- * 
+ * 1.树为空 情况
+ * 2.插入元素小于根节点元素 ，即在左子树插入
+ * 3.插入元素大于根节点元素值，即在右子树插入
  * @param tree 
  * @param element 
  * @return struct BSTreeNode* 
  */
 struct BSTreeNode *insert_node(struct BSTreeNode* tree, int element)
 {
+    /* tree 为空的处理 */
 	if (tree == NULL)
 	{
 		tree = (struct BSTreeNode*)malloc(sizeof(struct BSTreeNode));
@@ -224,12 +228,12 @@ struct BSTreeNode *insert_node(struct BSTreeNode* tree, int element)
 			printf("add element : %d success\n", element);
 		}
 	}
-	else if (element < tree->data)
+	else if (element < tree->data)   /* 插入左子树中 */
 	{
 		//printf("element %d < tree->element %d\n", element, tree->element);
 		tree->lchild = insert_node(tree->lchild, element);
 	}
-	else if (element > tree->data)
+	else if (element > tree->data)  /*插入右子树中 */
 	{
 		//printf("element %d > tree->element %d\n", element, tree->element);
 		tree->rchild = insert_node(tree->rchild, element);
@@ -238,3 +242,58 @@ struct BSTreeNode *insert_node(struct BSTreeNode* tree, int element)
 	return tree;
 }
  
+/**
+ * @brief DeleteBSTree
+ *  1.如果节点是一片树叶，即立即删除
+ *  2.如果节点有一个儿子，则用
+ * 
+ * @param pBST 
+ * @param DeleteVal 
+ * @return true 
+ * @return false 
+ */
+bool DeleteBSTree(struct BSTreeNode* pBST, int DeleteVal)
+{
+    struct BSTreeNode* pTemp = SearchBSTree(pBST, DeleteVal);
+    if(pTemp ==NULL)
+    {
+        printf("NO element in searchtree ,delete faild!\r\n");
+        return -1;
+    }
+     /* 删除节点无左右孩子 */
+    if(NULL ==pTemp->lchild && NULL == pTemp->rchild)
+    {
+
+    }
+    else if(NULL ==pTemp->lchild)
+    {    /* 删除节点无左孩子 */
+
+    } 
+    else if(NULL ==pTemp->rchild)
+    {     /*删除节点无右孩子 */
+
+    }
+    else  
+    {
+        /*删除节点有左右孩子，用删除节点左字树中的最大值或者右子树中最小值来代替删除节点
+            本例中用右子树中最小值来代替
+        */
+
+    }
+}
+
+/**
+ * @brief  创建一颗二叉搜索树
+ * 
+ * @return struct BSTreeNode* 
+ */
+struct BSTreeNode* CreateBSTree(struct BSTreeNode* tree)
+{
+    if(tree !=NULL)
+    {
+        CreateBSTree(tree->lchild);
+        CreateBSTree(tree->rchild);
+        free(tree);
+    }
+    return NULL;
+}

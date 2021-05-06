@@ -87,6 +87,14 @@ struct BSTreeNode *SearchMaxBSTree(struct BSTreeNode* pBST, int* pMaxData);
 bool InsertBSTree(struct BSTreeNode *pBST, int InsertVal);
 
 /**
+ * @brief 递归实现 插入元素操作
+ * 
+ * @param tree 
+ * @param element 
+ * @return struct BSTreeNode* 
+ */
+struct BSTreeNode *insert_node(struct BSTreeNode *tree, int element);
+/**
  * @brief 删除二叉树中的元素
  * 
  * @param pBST 
@@ -101,7 +109,7 @@ bool DeleteBSTree(struct BSTreeNode* pBST, int DeleteVal);
  * 
  * @return struct BSTreeNode* 
  */
-struct BSTreeNode* CreateBSTree(void);
+struct BSTreeNode *CreateBSTree(struct BSTreeNode *tree);
 
 
 
