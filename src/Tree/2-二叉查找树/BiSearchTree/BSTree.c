@@ -188,7 +188,7 @@ bool InsertBSTree(struct BSTreeNode *pBST, int InsertVal)
     {
         *pRoot =*pNewNode; 
     }
-    else if(pNewNode->data <= pTemp->data)
+    else if(pNewNode->data < pTemp->data)
     {
         pTemp->lchild = pNewNode;
     }
@@ -198,13 +198,19 @@ bool InsertBSTree(struct BSTreeNode *pBST, int InsertVal)
     }
 }
 
-#if 0 
 
-struct SearchTree *insert_node(struct SearchTree *tree, int element)
+/**
+ * @brief 插入元素到二叉树
+ * 
+ * @param tree 
+ * @param element 
+ * @return struct BSTreeNode* 
+ */
+struct BSTreeNode *insert_node(struct BSTreeNode* tree, int element)
 {
 	if (tree == NULL)
 	{
-		tree = (struct SearchTree *)malloc(sizeof(struct SearchTree));
+		tree = (struct BSTreeNode*)malloc(sizeof(struct BSTreeNode));
 		if (tree == NULL)
 		{
 			printf("malloc failed!\n");
@@ -212,24 +218,23 @@ struct SearchTree *insert_node(struct SearchTree *tree, int element)
 		}
 		else
 		{
-			tree->element = element;
-			tree->left = NULL;
-			tree->right = NULL;
+			tree->data = element;
+			tree->lchild = NULL;
+			tree->rchild= NULL;
 			printf("add element : %d success\n", element);
 		}
 	}
-	else if (element < tree->element)
+	else if (element < tree->data)
 	{
 		//printf("element %d < tree->element %d\n", element, tree->element);
-		tree->left = insert_node(tree->left, element);
+		tree->lchild = insert_node(tree->lchild, element);
 	}
-	else if (element > tree->element)
+	else if (element > tree->data)
 	{
 		//printf("element %d > tree->element %d\n", element, tree->element);
-		tree->right = insert_node(tree->right, element);
+		tree->rchild = insert_node(tree->rchild, element);
 	}
 	
 	return tree;
 }
  
-#endif
