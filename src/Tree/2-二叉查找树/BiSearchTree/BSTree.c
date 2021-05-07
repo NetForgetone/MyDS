@@ -296,7 +296,7 @@ void DeleteBSTree(struct BSTreeNode* pBST, int DeleteVal)
             本例中用右子树中最小值来代替
         */
         struct BSTreeNode* pTial = pTemp->rchild;  //往右子树下找
-        while(NULL != pTial—>lchild)  //查找右子树中的最小值
+        while(NULL != pTial->lchild)  //查找右子树中的最小值
         {
             pTial = pTial->lchild;
         }
