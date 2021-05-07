@@ -102,7 +102,7 @@ struct BSTreeNode *insert_node(struct BSTreeNode *tree, int element);
  * @return true 
  * @return false 
  */
-bool DeleteBSTree(struct BSTreeNode* pBST, int DeleteVal);
+void DeleteBSTree(struct BSTreeNode* pBST, int DeleteVal);
 
 /**
  * @brief  创建一颗二叉搜索树

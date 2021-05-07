@@ -252,35 +252,95 @@ struct BSTreeNode *insert_node(struct BSTreeNode* tree, int element)
  * @return true 
  * @return false 
  */
-bool DeleteBSTree(struct BSTreeNode* pBST, int DeleteVal)
+void DeleteBSTree(struct BSTreeNode* pBST, int DeleteVal)
 {
     struct BSTreeNode* pTemp = SearchBSTree(pBST, DeleteVal);
     if(pTemp ==NULL)
     {
         printf("NO element in searchtree ,delete faild!\r\n");
-        return -1;
+        exit(-1);
     }
      /* 删除节点无左右孩子 */
     if(NULL ==pTemp->lchild && NULL == pTemp->rchild)
     {
-
+        /* 删除节点是其父节点的左孩子 */
+        if(pTemp == pTemp->parent->lchild) 
+        {
+            pTemp->parent->lchild = NULL;
+        }
+        else  /*  //删除节点是其父节点的右孩子*/
+        {
+            pTemp->parent->rchild = NULL;
+        }
+        free(pTemp); /*释释放指针*/
+        pTemp = NULL;
     }
     else if(NULL ==pTemp->lchild)
-    {    /* 删除节点无左孩子 */
-
-    } 
-    else if(NULL ==pTemp->rchild)
-    {     /*删除节点无右孩子 */
-
+    {    /* 删除节点没有无左孩子 */
+        if(pTemp->parent->rchild ==pTemp) /*删除节点本身本身父元素节点左孩子*/
+        {
+            pTemp->parent->lchild = pTemp->rchild;
+            pTemp->rchild->parent = pTemp->parent;
+        }
+         else if(NULL ==pTemp->rchild)
+        {     /*删除节点无右孩子 */
+             pTemp->parent->rchild = pTemp->rchild;
+             pTemp->rchild->parent = pTemp->parent;
+         } 
+         free(pTemp);
+         pTemp = NULL;
     }
     else  
     {
         /*删除节点有左右孩子，用删除节点左字树中的最大值或者右子树中最小值来代替删除节点
             本例中用右子树中最小值来代替
         */
-
+        struct BSTreeNode* pTial = pTemp->rchild;  //往右子树下找
+        while(NULL != pTial—>lchild)  //查找右子树中的最小值
+        {
+            pTial = pTial->lchild;
+        }
+        if(pTemp == pTial->parent) //右子树中的最小值的父节点是删除节点
+        {
+            if(pTemp == pTemp->parent->lchild)  //删除节点为其父节点的左孩子
+            {
+                pTemp->parent->lchild = pTial;
+                pTial->lchild = pTemp->lchild;
+                pTemp->lchild->parent = pTial;
+            }
+            else
+            {
+                pTemp->parent->rchild = pTial;
+                pTial->lchild = pTemp->lchild;
+                pTemp->lchild->parent = pTial;
+            }
+            free(pTemp);
+            pTemp = NULL;
+        }
+        else
+        {
+            pTial->rchild->parent = pTial->parent;
+            pTial->parent->lchild = pTial->rchild;
+            pTial->parent->parent = pTial;
+            pTial->rchild = pTial->parent;
+            pTial->lchild = pTemp->lchild;
+            pTemp->lchild->parent = pTial;
+            if (pTemp == pTemp->parent->lchild)
+            {
+                pTemp->parent->lchild = pTial;
+            }
+            else
+            {
+            pTemp ->parent ->rchild = pTial;
+            
+            }
+            free(pTemp);
+            pTemp = NULL;
+         }
     }
-}
+ }
+    
+
 
 /**
  * @brief  创建一颗二叉搜索树
