@@ -209,7 +209,7 @@ bool InsertBSTree(struct BSTreeNode *pBST, int InsertVal)
  * @param element 
  * @return struct BSTreeNode* 
  */
-struct BSTreeNode *insert_node(struct BSTreeNode* tree, int element)
+struct BSTreeNode* insert_node(struct BSTreeNode* tree, int element)
 {
     /* tree 为空的处理 */
 	if (tree == NULL)
