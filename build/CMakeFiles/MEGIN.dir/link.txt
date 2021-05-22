@@ -1,0 +1,1 @@
+/usr/bin/gcc-7 -g  -rdynamic CMakeFiles/MEGIN.dir/src/Vecter/sequence_list.c.o CMakeFiles/MEGIN.dir/src/Tree/BSTree/BSTree.c.o  -o ../Bin/MEGIN  -L/home/object/MyDS/lib 
