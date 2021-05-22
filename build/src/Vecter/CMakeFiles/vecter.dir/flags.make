@@ -6,5 +6,5 @@ C_FLAGS = -g -fPIC
 
 C_DEFINES = -Dvecter_EXPORTS
 
-C_INCLUDES = -I/home/object/MyDS/include 
+C_INCLUDES = -I/home/object/MyDS/src/Vecter -I/home/object/MyDS/src/Tree/BSTree 
 

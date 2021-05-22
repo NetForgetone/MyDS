@@ -32,5 +32,7 @@ typedef struct {
 /* 初始化顺序表 */
 Status InitSqList(SqList* L);
 
+int SqListInit(void);
+
 
 #endif /* sequence_list.h */

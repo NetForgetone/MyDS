@@ -1,12 +1,32 @@
 [
 {
   "directory": "/home/object/MyDS/build",
-  "command": "/usr/bin/gcc-7  -I/home/object/MyDS/include  -g   -o CMakeFiles/LIST.dir/src/Vecter/sequence_list.c.o   -c /home/object/MyDS/src/Vecter/sequence_list.c",
+  "command": "/usr/bin/gcc-7  -I/home/object/MyDS/src/Vecter -I/home/object/MyDS/src/Tree/BSTree  -g   -o CMakeFiles/MEGIN.dir/src/Vecter/sequence_list.c.o   -c /home/object/MyDS/src/Vecter/sequence_list.c",
   "file": "/home/object/MyDS/src/Vecter/sequence_list.c"
 },
 {
+  "directory": "/home/object/MyDS/build",
+  "command": "/usr/bin/gcc-7  -I/home/object/MyDS/src/Vecter -I/home/object/MyDS/src/Tree/BSTree  -g   -o CMakeFiles/MEGIN.dir/src/Tree/BSTree/BSTree.c.o   -c /home/object/MyDS/src/Tree/BSTree/BSTree.c",
+  "file": "/home/object/MyDS/src/Tree/BSTree/BSTree.c"
+},
+{
+  "directory": "/home/object/MyDS/build",
+  "command": "/usr/bin/gcc-7  -I/home/object/MyDS/src/Vecter -I/home/object/MyDS/src/Tree/BSTree  -g   -o CMakeFiles/MEGIN.dir/src/Tree/BSTree/bisearchtree.c.o   -c /home/object/MyDS/src/Tree/BSTree/bisearchtree.c",
+  "file": "/home/object/MyDS/src/Tree/BSTree/bisearchtree.c"
+},
+{
+  "directory": "/home/object/MyDS/build",
+  "command": "/usr/bin/gcc-7  -I/home/object/MyDS/src/Vecter -I/home/object/MyDS/src/Tree/BSTree  -g   -o CMakeFiles/MEGIN.dir/src/main.c.o   -c /home/object/MyDS/src/main.c",
+  "file": "/home/object/MyDS/src/main.c"
+},
+{
   "directory": "/home/object/MyDS/build/src/Vecter",
-  "command": "/usr/bin/gcc-7 -Dvecter_EXPORTS -I/home/object/MyDS/include  -g -fPIC   -o CMakeFiles/vecter.dir/sequence_list.c.o   -c /home/object/MyDS/src/Vecter/sequence_list.c",
+  "command": "/usr/bin/gcc-7 -Dvecter_EXPORTS -I/home/object/MyDS/src/Vecter -I/home/object/MyDS/src/Tree/BSTree  -g -fPIC   -o CMakeFiles/vecter.dir/sequence_list.c.o   -c /home/object/MyDS/src/Vecter/sequence_list.c",
   "file": "/home/object/MyDS/src/Vecter/sequence_list.c"
+},
+{
+  "directory": "/home/object/MyDS/build/src/Tree/BSTree",
+  "command": "/usr/bin/gcc-7 -DBSTree_EXPORTS -I/home/object/MyDS/src/Vecter -I/home/object/MyDS/src/Tree/BSTree  -g -fPIC   -o CMakeFiles/BSTree.dir/BSTree.c.o   -c /home/object/MyDS/src/Tree/BSTree/BSTree.c",
+  "file": "/home/object/MyDS/src/Tree/BSTree/BSTree.c"
 }
 ]

@@ -33,7 +33,7 @@ Status InitSqList(SqList* L)
 
 
 
-int main(void)
+int SqListInit(void)
 {
    SqList a;
       InitSqList(&a);

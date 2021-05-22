@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.10.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.10.2/CMakeSystem.cmake"
   "../src/CMakeLists.txt"
+  "../src/Tree/BSTree/CMakeLists.txt"
   "../src/Vecter/CMakeLists.txt"
   "/usr/share/cmake-3.10/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake"
@@ -42,10 +43,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/Vecter/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/Tree/BSTree/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/LIST.dir/DependInfo.cmake"
+  "CMakeFiles/MEGIN.dir/DependInfo.cmake"
   "src/Vecter/CMakeFiles/vecter.dir/DependInfo.cmake"
+  "src/Tree/BSTree/CMakeFiles/BSTree.dir/DependInfo.cmake"
   )

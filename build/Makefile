@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named LIST
+# Target rules for targets named MEGIN
 
 # Build rule for target.
-LIST: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 LIST
-.PHONY : LIST
+MEGIN: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MEGIN
+.PHONY : MEGIN
 
 # fast build rule for target.
-LIST/fast:
-	$(MAKE) -f CMakeFiles/LIST.dir/build.make CMakeFiles/LIST.dir/build
-.PHONY : LIST/fast
+MEGIN/fast:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/build
+.PHONY : MEGIN/fast
 
 #=============================================================================
 # Target rules for targets named vecter
@@ -136,13 +136,80 @@ vecter/fast:
 	$(MAKE) -f src/Vecter/CMakeFiles/vecter.dir/build.make src/Vecter/CMakeFiles/vecter.dir/build
 .PHONY : vecter/fast
 
+#=============================================================================
+# Target rules for targets named BSTree
+
+# Build rule for target.
+BSTree: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BSTree
+.PHONY : BSTree
+
+# fast build rule for target.
+BSTree/fast:
+	$(MAKE) -f src/Tree/BSTree/CMakeFiles/BSTree.dir/build.make src/Tree/BSTree/CMakeFiles/BSTree.dir/build
+.PHONY : BSTree/fast
+
+src/Tree/BSTree/BSTree.o: src/Tree/BSTree/BSTree.c.o
+
+.PHONY : src/Tree/BSTree/BSTree.o
+
+# target to build an object file
+src/Tree/BSTree/BSTree.c.o:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/Tree/BSTree/BSTree.c.o
+.PHONY : src/Tree/BSTree/BSTree.c.o
+
+src/Tree/BSTree/BSTree.i: src/Tree/BSTree/BSTree.c.i
+
+.PHONY : src/Tree/BSTree/BSTree.i
+
+# target to preprocess a source file
+src/Tree/BSTree/BSTree.c.i:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/Tree/BSTree/BSTree.c.i
+.PHONY : src/Tree/BSTree/BSTree.c.i
+
+src/Tree/BSTree/BSTree.s: src/Tree/BSTree/BSTree.c.s
+
+.PHONY : src/Tree/BSTree/BSTree.s
+
+# target to generate assembly for a file
+src/Tree/BSTree/BSTree.c.s:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/Tree/BSTree/BSTree.c.s
+.PHONY : src/Tree/BSTree/BSTree.c.s
+
+src/Tree/BSTree/bisearchtree.o: src/Tree/BSTree/bisearchtree.c.o
+
+.PHONY : src/Tree/BSTree/bisearchtree.o
+
+# target to build an object file
+src/Tree/BSTree/bisearchtree.c.o:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/Tree/BSTree/bisearchtree.c.o
+.PHONY : src/Tree/BSTree/bisearchtree.c.o
+
+src/Tree/BSTree/bisearchtree.i: src/Tree/BSTree/bisearchtree.c.i
+
+.PHONY : src/Tree/BSTree/bisearchtree.i
+
+# target to preprocess a source file
+src/Tree/BSTree/bisearchtree.c.i:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/Tree/BSTree/bisearchtree.c.i
+.PHONY : src/Tree/BSTree/bisearchtree.c.i
+
+src/Tree/BSTree/bisearchtree.s: src/Tree/BSTree/bisearchtree.c.s
+
+.PHONY : src/Tree/BSTree/bisearchtree.s
+
+# target to generate assembly for a file
+src/Tree/BSTree/bisearchtree.c.s:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/Tree/BSTree/bisearchtree.c.s
+.PHONY : src/Tree/BSTree/bisearchtree.c.s
+
 src/Vecter/sequence_list.o: src/Vecter/sequence_list.c.o
 
 .PHONY : src/Vecter/sequence_list.o
 
 # target to build an object file
 src/Vecter/sequence_list.c.o:
-	$(MAKE) -f CMakeFiles/LIST.dir/build.make CMakeFiles/LIST.dir/src/Vecter/sequence_list.c.o
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/Vecter/sequence_list.c.o
 .PHONY : src/Vecter/sequence_list.c.o
 
 src/Vecter/sequence_list.i: src/Vecter/sequence_list.c.i
@@ -151,7 +218,7 @@ src/Vecter/sequence_list.i: src/Vecter/sequence_list.c.i
 
 # target to preprocess a source file
 src/Vecter/sequence_list.c.i:
-	$(MAKE) -f CMakeFiles/LIST.dir/build.make CMakeFiles/LIST.dir/src/Vecter/sequence_list.c.i
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/Vecter/sequence_list.c.i
 .PHONY : src/Vecter/sequence_list.c.i
 
 src/Vecter/sequence_list.s: src/Vecter/sequence_list.c.s
@@ -160,8 +227,35 @@ src/Vecter/sequence_list.s: src/Vecter/sequence_list.c.s
 
 # target to generate assembly for a file
 src/Vecter/sequence_list.c.s:
-	$(MAKE) -f CMakeFiles/LIST.dir/build.make CMakeFiles/LIST.dir/src/Vecter/sequence_list.c.s
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/Vecter/sequence_list.c.s
 .PHONY : src/Vecter/sequence_list.c.s
+
+src/main.o: src/main.c.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.c.o:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/main.c.o
+.PHONY : src/main.c.o
+
+src/main.i: src/main.c.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.c.i:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/main.c.i
+.PHONY : src/main.c.i
+
+src/main.s: src/main.c.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.c.s:
+	$(MAKE) -f CMakeFiles/MEGIN.dir/build.make CMakeFiles/MEGIN.dir/src/main.c.s
+.PHONY : src/main.c.s
 
 # Help Target
 help:
@@ -170,12 +264,22 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... LIST"
+	@echo "... MEGIN"
 	@echo "... edit_cache"
 	@echo "... vecter"
+	@echo "... BSTree"
+	@echo "... src/Tree/BSTree/BSTree.o"
+	@echo "... src/Tree/BSTree/BSTree.i"
+	@echo "... src/Tree/BSTree/BSTree.s"
+	@echo "... src/Tree/BSTree/bisearchtree.o"
+	@echo "... src/Tree/BSTree/bisearchtree.i"
+	@echo "... src/Tree/BSTree/bisearchtree.s"
 	@echo "... src/Vecter/sequence_list.o"
 	@echo "... src/Vecter/sequence_list.i"
 	@echo "... src/Vecter/sequence_list.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
