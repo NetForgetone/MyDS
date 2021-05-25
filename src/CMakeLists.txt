@@ -2,5 +2,5 @@
 
 
 add_subdirectory(./Vecter)
-add_subdirectory(./Tree/BSTree)
-add_subdirectory(./Tree/AVL_Tree)
+add_subdirectory(./Tree/2-BSTree)
+add_subdirectory(./Tree/3-AVL_Tree)
