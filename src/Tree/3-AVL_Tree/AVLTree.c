@@ -125,3 +125,132 @@ static Node* right_left_rotation(AVLTree k4)
 	k4->rChild =left_left_rotation(k4->rChild);
 	return right_right_rotation(k4);
 }
+
+Node* avltree_insert(AVLTree tree,int key)
+{
+	if(tree == NULL)
+	{
+		//新建结点
+		tree = avltree_create_node(key, NULL, NULL);
+		if(tree ==NULL)
+		{
+			printf("ERROR:create avltree node failed!\r\n");
+			return NULL;
+		}
+	}
+	else if(key<tree->value)     
+	{
+			//应该将key插入tree的左子树情况 ，小于根节点值
+		tree->lChild = avltree_insert(tree->lChild, key);
+		//插入节点若avl树失去平衡，则进行对应的调节。
+		if(HEIGHT(tree->lChild)-HEIGHT(tree->rChild) == 2)
+		{
+			if(key < tree->lChild->value)
+			{
+				tree = left_left_rotation(tree);
+			}
+			else
+			{
+				tree = left_right_rotation(tree);
+			}
+		}
+	}
+	else if(key > tree->rChild)
+	{
+		//应该将key插入到tree的右子树的情况
+		tree->rChild = avltree_insert(tree->rChild, key);
+		//插入后如果avl树失去平衡则进行调节
+		if(HEIGHT(tree->rChild)-HEIGHT(tree->lChild) == 2)
+		{
+			if(key >tree->rChild->value)
+			{
+				tree = right_right_rotation(tree);
+			}
+			else
+			{
+				tree = right_left_rotation(tree);
+			}
+		}
+	}
+	else
+	{
+		printf("添加失败，不允许添加相同的结点！\r\n");
+	}
+		//更新tree高度
+	tree->height = MAX(HEIGHT(tree->lChild), HEIGHT(tree->rChild)) + 1;
+	return tree;
+}
+
+/**
+ * @brief delete tree node
+ * 
+ * @param tree 
+ * @param z 
+ * @return Node* 
+ */
+Node* delete_node(AVLTree tree,Node* z)
+{
+	//根为空或者没有删除的结点，直接返回NULL
+	if(tree == NULL|| z ==NULL)
+	{
+		return NULL;
+	}
+
+	//待删除节点在左子树中
+	if(z->value <tree->value)
+	{
+		tree->lChild = delete_node(tree->lChild, z);
+		//删除节点后失去平衡，需要调整
+		if (HEIGHT(tree->rChild) - HEIGHT(tree->lChild) == 2)
+		{
+			Node *r = tree->rChild;
+			if(HEIGHT(r->lChild) > HEIGHT(r->rChild))
+			{
+				tree = right_left_rotation(tree);
+			}
+			else
+			{
+				tree = right_right_rotation(tree);
+			}
+		}
+	}
+	else if (z->value >tree->value)
+	{ //z节点在tree的右子树中
+		tree->rChild = delete_node(tree->rChild, z);
+		//删除节点后失去平衡，需要调整
+		if (HEIGHT(tree->lChild) - HEIGHT(tree->rChild) == 2)
+		{
+			Node *r = tree->lChild;
+			//求取左子树右子树 高度偏向哪边
+			if(HEIGHT(r->rChild) > HEIGHT(r->lChild))
+			{
+				tree = left_right_rotation(tree);
+			}
+			else
+			{
+				tree = left_left_rotation(tree);
+			}
+		}
+	}
+	else // tree是对应要删除的节点。
+	{	
+		// tree的左右孩子都非空
+		if(tree->lChild && tree->rChild)
+		{
+			if (HEIGHT(tree->lChild) > HEIGHT(tree->rChild))
+			{
+				// 如果tree的左子树比右子树高；
+                // 则(01)找出tree的左子树中的最大节点
+                //   (02)将该最大节点的值赋值给tree。
+                //   (03)删除该最大节点。
+                // 这类似于用"tree的左子树中最大节点"做"tree"的替身；
+                // 采用这种方式的好处是：删除"tree的左子树中最大节点"之后，AVL树仍然是平衡的。
+
+			}
+		}
+	}
+	
+	
+
+	
+}
