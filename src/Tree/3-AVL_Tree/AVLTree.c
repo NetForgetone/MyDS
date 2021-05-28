@@ -38,6 +38,8 @@ d: 先右后左旋转：(RL型:节点X的右孩子的左孩子上插入新元素
 #include <stdlib.h>
 #include "AVLTree.h"
 
+static int arr[]= {3,2,1,4,5,6,7,16,15,14,13,12,11,10,8,9};
+#define TBL_SIZE(a) ( (sizeof(a)) / (sizeof(a[0])) )
 
 static Node* avltree_create_node(uint key,Node* left,Node* right)
 {
@@ -245,12 +247,137 @@ Node* delete_node(AVLTree tree,Node* z)
                 //   (03)删除该最大节点。
                 // 这类似于用"tree的左子树中最大节点"做"tree"的替身；
                 // 采用这种方式的好处是：删除"tree的左子树中最大节点"之后，AVL树仍然是平衡的。
+				Node *max = avltree_maximum(tree->lChild); 
+				tree->value = max->value;  
+				tree->lChild =delete_node(tree->lChild,max);
+			}
+			else
+			{
+				// 如果tree的左子树不比右子树高(即它们相等，或右子树比左子树高1)
+                // 则(01)找出tree的右子树中的最小节点
+                //   (02)将该最小节点的值赋值给tree。
+                //   (03)删除该最小节点。
+                // 这类似于用"tree的右子树中最小节点"做"tree"的替身；
+                // 采用这种方式的好处是：删除"tree的右子树中最小节点"之后，AVL树仍然是平衡的。
+				Node *min = avltree_minmum(tree->rChild);
+				tree->value = min->value;
+				tree->rChild = delete_node(tree->rChild,min);
 
 			}
 		}
+		else
+		{	//如果空则删除根节点
+			Node *tmp = tree;
+			tree = tree->lChild ? tree->lChild : tree->rChild;
+			free(tmp);
+		}
 	}
-	
-	
-
-	
+	return tree;
 }
+
+/**
+ * @brief 删除节点（key是节点值），返回根节点
+ * 
+ * @param tree 
+ * @param key 
+ * @return Node* 
+ */
+Node* avltree_delete(AVLTree tree,int key)
+{
+	Node *z;
+
+	if((z = avltree_search(tree,key) != NULL))
+	{
+		tree = delete_node(tree, z);
+	}
+	return tree;
+}
+
+/**
+ * @brief 销毁avl树
+ * 
+ * @param tree 
+ */
+void destroy_avltree(AVLTree tree)
+{
+	if(tree == NULL)
+		return 0;
+	if (tree->lChild != NULL)
+	{
+		destroy_avltree(tree->lChild);
+	}
+	if(tree->rChild == NULL)
+	{
+		destroy_avltree(tree->rChild);
+	}
+	free(tree);
+}
+
+/**
+ * @brief 打印avltree
+ * 
+ * @param tree 
+ * @param key 
+ * @param direction 
+ */
+ void printf_avltree(AVLTree tree, int key,int direction)
+ {
+	 if(tree != NULL)
+	 {
+		 
+		 if(direction == 0)
+		 {  //tree 是根节点
+			   printf("%2d is root\n", tree->value, key);
+		 }
+		 else
+		 {
+			  printf("%2d is %2d,s child \n", tree->value, direction = 1 ? "right" : "left");
+		 }
+	 }
+ }
+
+void AvlTree_Init(void)
+{
+	  int i,ilen;
+     AVLTree root=NULL;
+ 
+   printf("== 高度: %d\n", avltree_height(root));
+     printf("== 依次添加: ");
+     ilen = TBL_SIZE(arr);
+     for(i=0; i<ilen; i++)
+     {
+         printf("%d ", arr[i]);
+         root = avltree_insert(root, arr[i]);
+     }
+ 
+     printf("\n== 前序遍历: ");
+     preorder_avltree(root);
+ 
+     printf("\n== 中序遍历: ");
+     inorder_avltree(root);
+ 
+    printf("\n== 后序遍历: ");
+     postorder_avltree(root);
+    printf("\n");
+
+    printf("== 高度: %d\n", avltree_height(root));
+    printf("== 最小值: %d\n", avltree_minimum(root)->key);
+    printf("== 最大值: %d\n", avltree_maximum(root)->key);
+    printf("== 树的详细信息: \n");
+    print_avltree(root, root->key, 0);
+
+
+    i = 8;
+    printf("\n== 删除根节点: %d", i);
+     root = avltree_delete(root, i);
+ 
+     printf("\n== 高度: %d", avltree_height(root));
+     printf("\n== 中序遍历: ");
+     inorder_avltree(root);
+    printf("\n== 树的详细信息: \n");
+     print_avltree(root, root->key, 0);
+ 
+    // 销毁二叉树
+     destroy_avltree(root);
+}
+
