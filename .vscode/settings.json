@@ -4,7 +4,12 @@
     "bstree.h": "c",
     "bisearchtree.h": "c",
     "sequence_list.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "avltree.h": "c",
+    "type_traits": "c",
+    "cmath": "c",
+    "limits": "c",
+    "*.tcc": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",
   "C_Cpp_Runner.cppCompilerPath": "/usr/bin/g++",

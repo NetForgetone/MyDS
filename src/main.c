@@ -11,9 +11,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "sequence_list.h"
-
+#include "AVLTree.h"
 int main()
 {
     SqListInit();
+    AvlTree_Init();
     return 0;
 }

@@ -10,12 +10,14 @@ set(LIST_DIR "${PROJECT_SOURCE_DIR}/src/List/")
 #头文件目录
 include_directories(
     ${PROJECT_SOURCE_DIR}/src/Vecter/ 
-    ${PROJECT_SOURCE_DIR}/src/Tree/BSTree/
+    ${PROJECT_SOURCE_DIR}/src/Tree/2-BSTree/
+    ${PROJECT_SOURCE_DIR}/src/Tree/3-AVL_Tree/
     )
 
-aux_source_directory(${PROJECT_SOURCE_DIR}/src/Vecter/ source_list )
-aux_source_directory(${PROJECT_SOURCE_DIR}/src/Tree/BSTree/ source_list)       
-aux_source_directory(${PROJECT_SOURCE_DIR}/src/ source_list)       
+aux_source_directory(${PROJECT_SOURCE_DIR}/src/  source_list)
+aux_source_directory(${PROJECT_SOURCE_DIR}/src/Vecter source_list )
+aux_source_directory(${PROJECT_SOURCE_DIR}/src/Tree/2-BSTree source_list)       
+aux_source_directory(${PROJECT_SOURCE_DIR}/src/Tree/3-AVL_Tree source_list)       
 
 #设置可执行文件的输出目录
 set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/Bin)
@@ -49,3 +51,4 @@ add_executable(MEGIN ${source_list})
 #链接库文件
 target_link_libraries(vecter)
 target_link_libraries(BSTree )
+target_link_libraries(AVLTree )

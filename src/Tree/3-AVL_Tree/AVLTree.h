@@ -28,8 +28,20 @@ typedef struct AVLTreeNode{
 
 /*空的二叉树的高度为0，根的层次为1，根的子节点为第2层 */
 #define HEIGHT(p)  ((p==NULL) ? 0:((Node*)(p))->height)
-#define MAX(a,b)   ((a) > (b) ? (a):(b))
+#define MAX(a,b)   ((a)>(b)?(a):(b))
 
+void preorder_avltree(AVLTree tree);
 
+void inorder_avltree(AVLTree tree);
 
+void postorder_avltree(AVLTree tree);
+
+ Node* avltree_mininum(AVLTree tree);
+
+ Node* avltree_maxinum(AVLTree tree);
+
+Node* avltree_search(AVLTree x, int key);
+Node* iterative_avltree_search(AVLTree x, int key);
+
+void AvlTree_Init(void );
 #endif
