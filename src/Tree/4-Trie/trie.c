@@ -12,16 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#define MAX 26
-
-typedef struct Trie
-{
-	struct Trie *child[26];
-	int end;
-
-} Trie;
-
-
+#include "Trie.h"
 Trie* TrieCreate()
 {
 	Trie *t = (Trie *)malloc(sizeof(Trie));

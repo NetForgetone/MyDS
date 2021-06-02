@@ -11,7 +11,19 @@
 #ifndef _TRIE_H
 #define _TRIE_H
 
-#include <stdo.h>
+#include <stdio.h>
+#define MAX 25
 
-Trie* TrieCreate(void);
+typedef struct Trie
+{
+	struct Trie *child[25];
+	int end;
+
+} Trie;
+
+void TrieFree(Trie *obj);
+bool TrieStartWith(Trie *obj, char *prefix);
+bool TrieSearch(Trie *obj, char *word);
+void TrieInsert(Trie *obj, char *word);
+Trie *TrieCreate(void);
 #endif
