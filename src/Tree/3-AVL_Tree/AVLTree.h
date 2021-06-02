@@ -30,6 +30,7 @@ typedef struct AVLTreeNode{
 #define HEIGHT(p)  ((p==NULL) ? 0:((Node*)(p))->height)
 #define MAX(a,b)   ((a)>(b)?(a):(b))
 
+void destroy_avltree(AVLTree tree);
 void preorder_avltree(AVLTree tree);
 
 void inorder_avltree(AVLTree tree);
