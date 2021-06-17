@@ -42,10 +42,7 @@ unsigned put(hash_set_t *set, long long hash, void *value)
 
 int contains(hash_set_t *set, void *value)
 {
-    return set->keys[retrieve_index_from_hash(hash(value), set->capacity)] ==
-                   value
-               ? 1
-               : 0;
+    return set->keys[retrieve_index_from_hash(hash(value), set->capacity)] == value ? 1:0;
 }
 
 int contains_hash(hash_set_t *set, long long hash)

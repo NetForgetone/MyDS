@@ -1,6 +1,6 @@
 
-message("building Trie for AVLTree.c  succerrse!")
+message("building Trie for Trie.c  succerrse!")
 
-#add_library(Trie_Tree SHARED ./Trie.c)
+add_library(Trie_Tree SHARED ./Trie.c)
 
 

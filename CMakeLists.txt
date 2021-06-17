@@ -12,13 +12,16 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/src/Vecter/ 
     ${PROJECT_SOURCE_DIR}/src/Tree/2-BSTree/
     ${PROJECT_SOURCE_DIR}/src/Tree/3-AVL_Tree/
+     ${PROJECT_SOURCE_DIR}/src/Tree/4-Trie/
+    ${PROJECT_SOURCE_DIR}/src/Tree/5-Splay_Tree/
     )
 
 aux_source_directory(${PROJECT_SOURCE_DIR}/src/  source_list)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src/Vecter source_list )
 aux_source_directory(${PROJECT_SOURCE_DIR}/src/Tree/2-BSTree source_list)       
 aux_source_directory(${PROJECT_SOURCE_DIR}/src/Tree/3-AVL_Tree source_list)       
-
+aux_source_directory(${PROJECT_SOURCE_DIR}/src/Tree/4--Trie source_list)
+aux_source_directory(${PROJECT_SOURCE_DIR}/src/Tree/5-Splay_Tree source_list)
 #设置可执行文件的输出目录
 set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/Bin)
 #设置生成库文件的输出目录
@@ -52,3 +55,4 @@ add_executable(MEGIN ${source_list})
 target_link_libraries(vecter)
 target_link_libraries(BSTree )
 target_link_libraries(AVLTree )
+target_link_libraries(SplayTree)

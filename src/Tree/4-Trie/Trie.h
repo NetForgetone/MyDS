@@ -1,6 +1,6 @@
 /**
  * @file Trie.h
- * @author your name (you@domain.com)
+ * @author LXW(liu820211598@qq.com)
  * @brief 
  * @version 0.1
  * @date 2021-06-02

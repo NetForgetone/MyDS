@@ -1,3 +1,12 @@
 
-message("building tree for BSTree.c  succerrse!")
- 
+message("building tree for Tree  succerrse!")
+add_subdirectory(1-Btree)
+add_subdirectory(./2-BSTree)
+add_subdirectory(./3-AVL_Tree)
+add_subdirectory(./4-Trie)
+add_subdirectory(./5-Splay_Tree)
+add_subdirectory(./6-SuffixTree)
+add_subdirectory(./7-B_Tree)
+add_subdirectory(./8-Heap_Tree)
+add_subdirectory(./9-R-B_Tree)
+add_subdirectory(./10-Huffman_Tree)
